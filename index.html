@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1">
+		<title>Home Page</title>
+		<script type="text/javascript" src="jquery.min.js"></script>
+		<script type="text/javascript" src="vault.js"></script>
+		<link href="main.css" rel="stylesheet" type="text/css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer">
+	</head>
+	<body>
+		<nav class="navtop">
+			<div>
+				<h1>TORN</h1>
+			</div>
+		</nav>
+
+		<div class="content">
+			<h2>Player Name: </h2>
+			
+			
+			<div class="grid-container" >
+		
+		<div class="api">
+			API:
+            <input type="text" id="apiKeyInput" />
+            <button id="callButton" onclick="call()">Call</button>
+        </div>
+
+        <div class="scroll" id="myTable" style="display:true">
+            <table id="myTable2" class="tabular">
+                <thead>
+                    <tr>
+                        <th>Torn Time (TCT)</th>
+                        <th>Our Time (TCT -8)</th>
+                        <th>Name</th>
+                        <th>Money in vault</th>
+                    </tr>
+                </thead>
+            <tbody id="myTableBody">
+            </tbody>
+            </table>			
+		</div>
+	</body>
+</html>
