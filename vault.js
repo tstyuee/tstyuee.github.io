@@ -4,11 +4,11 @@ function call(){
     if(api==''){
         alert('Please insert api key');
     } else{
-        fetchApi(api);
+        fetchApi(api,uid);
     }
 };
 
-function fetchApi(api){
+function fetchApi(api,uid){
     const url = `https://api.torn.com/user/${uid}?selections=log&cat=138&key=${api}`;
     const propertyId = 2600552;
     fetch(url)
