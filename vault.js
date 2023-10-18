@@ -1,5 +1,6 @@
 function call(){
     let api = document.getElementById("apiKeyInput").value;
+    let uid = document.getElementById("userIdInput").value;
     if(api==''){
         alert('Please insert api key');
     } else{
@@ -8,7 +9,7 @@ function call(){
 };
 
 function fetchApi(api){
-    const url = `https://api.torn.com/user/2235735?selections=log&cat=138&key=${api}`;
+    const url = `https://api.torn.com/user/${uid}?selections=log&cat=138&key=${api}`;
     const propertyId = 2600552;
     fetch(url)
     .then((response) => response.json())
