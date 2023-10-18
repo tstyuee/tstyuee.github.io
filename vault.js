@@ -3,6 +3,7 @@ function call(){
     let uid = document.getElementById("userIdInput").value;
     if(api==''){
         alert('Please insert api key');
+        console.log(uid);
     } else{
         fetchApi(api,uid);
     }
@@ -11,8 +12,8 @@ function call(){
 function fetchApi(api,uid){
     const url = `https://api.torn.com/user/${uid}?selections=log&cat=138&key=${api}`;
     const propertyId = 2600552;
-    console.log(uid);
-    /*
+    
+    
     fetch(url)
     .then((response) => response.json())
     .then((jsonResponse) => {
@@ -48,7 +49,7 @@ function fetchApi(api,uid){
         
 
 
-    }); */
+    }); 
 };
 
 function calculateFinalAmount(fetchResult, propertyId) {
