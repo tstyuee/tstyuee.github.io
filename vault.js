@@ -27,6 +27,7 @@ function fetchApi(api,uid){
         const penguinBalance = totalBalance - myFinalAmount;
         const row1 = [TCT, ourTime, 'Pam', myFinalAmount.toLocaleString()];
         const row2 = [TCT, ourTime, 'Penguin', penguinBalance.toLocaleString()];
+        const row2 = [TCT, ourTime, 'Total Balance', totalBalance.toLocaleString()];
         const tableBody = document.getElementById('myTableBody');
 
         const r1 = document.createElement('tr');
