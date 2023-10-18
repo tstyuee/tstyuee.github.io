@@ -27,7 +27,7 @@ function fetchApi(api,uid){
         const penguinBalance = totalBalance - myFinalAmount;
         const row1 = [TCT, ourTime, 'Pam', myFinalAmount.toLocaleString()];
         const row2 = [TCT, ourTime, 'Penguin', penguinBalance.toLocaleString()];
-        const row2 = [TCT, ourTime, 'Total Balance', totalBalance.toLocaleString()];
+        const row3 = [TCT, ourTime, 'Total Balance', totalBalance.toLocaleString()];
         const tableBody = document.getElementById('myTableBody');
 
         const r1 = document.createElement('tr');
@@ -45,6 +45,14 @@ function fetchApi(api,uid){
             r2.appendChild(cell);
         });
         tableBody.appendChild(r2);
+
+        const r3 = document.createElement('tr');
+        row3.forEach(value => {
+            const cell = document.createElement('td');
+            cell.textContent = value;
+            r3.appendChild(cell);
+        });
+        tableBody.appendChild(r3);
 
 
        
