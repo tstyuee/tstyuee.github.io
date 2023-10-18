@@ -91,7 +91,7 @@ function convertTCT(timestamp) {
 };
 
 function convertOurTime(timestamp) {
-    const ourTime = timestamp - 8 * 60 * 60;
+    const ourTime = timestamp + 8 * 60 * 60;
     const date = new Date(ourTime * 1000);
     const year = date.getFullYear();
     const month = date.getMonth() + 1; // Months are zero-based, so add 1
