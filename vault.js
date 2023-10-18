@@ -2,7 +2,7 @@ function call(){
     let api = document.getElementById("apiKeyInput").value;
     let uid = document.getElementById("userIdInput").value;
     if(api==''){
-        console.log(uid);
+       
         alert('Please insert api key');
         
     } else{
