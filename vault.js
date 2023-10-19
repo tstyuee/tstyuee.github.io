@@ -25,7 +25,7 @@ function fetchApi(api,uid){
         const myFinalAmount = calculateFinalAmount(jsonResponse,propertyId);
         const totalBalance = totalAmount(jsonResponse,propertyId);
         const penguinBalance = totalBalance - myFinalAmount;
-
+        console.log(TCT);
         fetch(url2)
         .then((response2) => response2.json())
         .then((jsonResponse2) => {
@@ -88,7 +88,7 @@ function getTimestamp(fetchResult, propertyId) {
 };
 
 function convertTCT(timestamp) {
-    const TCT = timestamp;
+    const TCT = timestamp - 8 * 60 * 60;
     const date = new Date(TCT * 1000);
     const year = date.getFullYear();
     const month = date.getMonth() + 1; // Months are zero-based, so add 1
@@ -103,7 +103,7 @@ function convertTCT(timestamp) {
 };
 
 function convertOurTime(timestamp) {
-    const ourTime = timestamp + 8 * 60 * 60;
+    const ourTime = timestamp;
     const date = new Date(ourTime * 1000);
     const year = date.getFullYear();
     const month = date.getMonth() + 1; // Months are zero-based, so add 1
