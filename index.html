@@ -17,26 +17,33 @@
 		</nav>
 
 		<div class="content">
-			<h2>Player Name: </h2>
-			
-			
-			<div class="grid-container" >
+			<h2>Player Name: </h2>		
 		
-		<div class="api">
-			API:
-            <input type="text" id="apiKeyInput" />
 			<div class="api">
-			User ID:
-            <input type="text" id="userIdInput" />
-            <button id="callButton" onclick="call()">Call</button>
-        </div>
+				<label for="apiKeyInput">API</label>
+            	<input type="password" id="apiKeyInput" />
+			</div>	
+			
+			<div class="uid">
+				<label for="userIdInput">User Id</label>
+            	<input type="text" id="userIdInput" />
+			</div>
+
+			<div class="btn">
+            	<button id="callButton" onclick="call()" style="width: 100%;">Call</button>
+			</div>
+
+			<div class="tot">
+				<label for="totalBalance">Total Balance</label>
+				<input type="text" id="totBal" readonly placeholder="Total"/>
+			</div>
 
         <div class="scroll" id="myTable" style="display:true">
             <table id="myTable2" class="tabular">
                 <thead>
                     <tr>
                         <th>Torn Time (TCT)</th>
-                        <th>Our Time (TCT -8)</th>
+                        <th>Our Time (TCT +8)</th>
                         <th>Name</th>
                         <th>Money in vault</th>
                     </tr>

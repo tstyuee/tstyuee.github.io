@@ -13,7 +13,7 @@ function call(){
 function fetchApi(api,uid){
     const url = `https://api.torn.com/user/${uid}?selections=log&cat=138&key=${api}`;
     const propertyId = 2600552;
-    
+    const url2 = `https://api.torn.com/user/?selections=profile&key=${api}`;
     
     fetch(url)
     .then((response) => response.json())
@@ -25,28 +25,36 @@ function fetchApi(api,uid){
         const myFinalAmount = calculateFinalAmount(jsonResponse,propertyId);
         const totalBalance = totalAmount(jsonResponse,propertyId);
         const penguinBalance = totalBalance - myFinalAmount;
-        const row1 = [TCT, ourTime, 'Pam', myFinalAmount.toLocaleString()];
-        const row2 = [TCT, ourTime, 'Penguin', penguinBalance.toLocaleString()];
-        const tableBody = document.getElementById('myTableBody');
 
-        const r1 = document.createElement('tr');
-        row1.forEach(value => {
-            const cell = document.createElement('td');
-            cell.textContent = value;
-            r1.appendChild(cell);
-        });
-        tableBody.appendChild(r1);
+        fetch(url2)
+        .then((response2) => response2.json())
+        .then((jsonResponse2) => {
+            const playerName = jsonResponse2.name;
+            const spouseName = jsonResponse2.married.spouse_name;
+            const row1 = [TCT, ourTime, playerName, myFinalAmount.toLocaleString()];
+            const row2 = [TCT, ourTime, spouseName, penguinBalance.toLocaleString()];
+            const tableBody = document.getElementById('myTableBody');
+            const r1 = document.createElement('tr');
+            row1.forEach(value => {
+                const cell = document.createElement('td');
+                cell.textContent = value;
+                r1.appendChild(cell);
+            });
+            tableBody.appendChild(r1);
+    
+            const r2 = document.createElement('tr');
+            row2.forEach(value => {
+                const cell = document.createElement('td');
+                cell.textContent = value;
+                r2.appendChild(cell);
+            });
+            tableBody.appendChild(r2);
 
-        const r2 = document.createElement('tr');
-        row2.forEach(value => {
-            const cell = document.createElement('td');
-            cell.textContent = value;
-            r2.appendChild(cell);
-        });
-        tableBody.appendChild(r2);
-
+        })
 
        
+
+        document.getElementById("totBal").placeholder = totalBalance.toLocaleString();
         
 
 

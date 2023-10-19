@@ -75,9 +75,21 @@ body.loggedin {
     background-color: tomato;
 }
 
-.api{
+.api, .uid, .tot, .btn{
 	padding: 5px;
 	margin: 0 0 10px 0;
+	display: flex;
+	align-items: center;
+}
+
+
+
+.api label, .uid label, .tot label{
+	width: 100px;
+}
+
+.api input, .uid input, .tot input{
+	flex: 1;
 }
 
 table{
@@ -114,10 +126,10 @@ th{
 
 .scroll{
     margin: 100%, 100%;
-    padding: 4px;
+    padding: 5px;
     background-color: white;
-    width: 100%;
-    height: 500px;
+    
+    height: 200px;
     
     overflow: auto;
     
